@@ -11,8 +11,7 @@
     <h1>Come Again</h1>
     <hr />
     <?php
-    session_start();
-    session_destroy();
+    setcookie('username', '', time() - 100);
     include 'login.html'
     ?>
 </body>

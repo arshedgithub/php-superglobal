@@ -1,6 +1,5 @@
 <?php 
-session_start();
-if (!isset($_SESSION['username'])) {
+if (!isset($_COOKIE['username'])) {
     include 'login.html';
     die();
 } ?>
@@ -15,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
     <h1>Welcome to Harvest Super</h1>
-    <h4>You are login as <?php echo($_SESSION['username']) ?></h4>
+    <h4>You are login as <?php echo($_COOKIE['username']) ?></h4>
     <h4><a href="logout.php">logout</a></h4>
 
     <table border="1">

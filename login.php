@@ -10,8 +10,7 @@ $username = $_POST['txtUsername'];
 $password = $_POST['txtPassword'];
 
 if ($username == 'root' && $password == '1234') {
-    session_start();
-    $_SESSION['username'] = $username;
+    setcookie('username', $username, time() + 2*60);
     include "mainWindow.php";
 
 } else {
