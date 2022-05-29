@@ -1,5 +1,5 @@
 <?php
-    if (!isset($_SESSION['username'])) {
+    if (!(isset($_SESSION['username']) && time() - $_SESSION['lastactive'] < 10 )) {
         include 'login.html';
         die();
     }
