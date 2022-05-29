@@ -1,3 +1,11 @@
+<?php 
+session_start(); 
+if (!isset($_SESSION['username'])) {
+    include 'login.html';
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +15,10 @@
     <title>Fruits</title>
 </head>
 <body>
+    <h1>Welcome to Harvest Super</h1>
+    <h4>You are login as <?php echo($_SESSION['username']) ?></h4>
+    <h4><a href="logout.php">logout</a></h4>
+    
     <table border="1">
         <tr>
             <th>Item</th>
